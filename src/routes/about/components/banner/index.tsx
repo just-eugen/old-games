@@ -1,5 +1,3 @@
-function Banner() {
+export const Banner = () => {
   return <div>test</div>;
-}
-
-export default Banner;
+};
