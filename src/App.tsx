@@ -1,11 +1,11 @@
 import './components/button';
 import { Button } from './components/button';
 
-const handleClick = () => {
-  alert('test');
-};
-
 function App() {
+  const handleClick = () => {
+    alert('test');
+  };
+
   return (
     <div>
       <Button text="test" onClick={handleClick} />
