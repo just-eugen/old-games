@@ -1,15 +1,18 @@
 import { useState, useEffect } from 'react';
 import { Game } from './components/game';
-import { AxiosClient } from '../../modules/axios-client';
 import type { TGameList } from './types';
+import { GameModule } from '../../modules/game';
 
 export const Home = () => {
   const [games, setGames] = useState<TGameList>([]);
+  const gameModule = new GameModule();
 
   useEffect(() => {
-    AxiosClient.get('/test').then(({ data }) => {
-      setGames(data);
-    });
+    const init = async () => {
+      const res = await gameModule.getGames();
+      setGames(res);
+    };
+    init();
   }, []);
 
   return (
