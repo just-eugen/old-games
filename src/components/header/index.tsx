@@ -1,5 +1,5 @@
-import { StyledHeader } from './styled';
+import { StyledTitle } from './styled';
 
 export const Header = () => {
-  return <StyledHeader>Old games</StyledHeader>;
+  return <StyledTitle>Old games</StyledTitle>;
 };

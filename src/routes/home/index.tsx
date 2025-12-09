@@ -1,18 +1,16 @@
-import React from 'react';
-import { Games } from './types';
+import { useState, useEffect } from 'react';
 import { Game } from './components/game';
 import { AxiosClient } from '../../modules/axios-client';
+import type { TGameList } from './types';
 
 export const Home = () => {
-  const [games, setGames] = React.useState<Games[]>([]);
+  const [games, setGames] = useState<TGameList>([]);
 
-  React.useEffect(() => {
-    AxiosClient.get('/test').then(function ({ data }) {
+  useEffect(() => {
+    AxiosClient.get('/test').then(({ data }) => {
       setGames(data);
     });
   }, []);
-
-  console.log(games);
 
   return (
     <div>
