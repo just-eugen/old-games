@@ -1,4 +1,4 @@
 export type TGameProps = {
   name: string;
-  description: string;
+  description?: string;
 };

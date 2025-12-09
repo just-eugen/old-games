@@ -1,5 +1,7 @@
-export interface Games {
+export type TGame = {
   id: number;
   name: string;
-  description: string;
-}
+  description?: string;
+};
+
+export type TGameList = TGame[];

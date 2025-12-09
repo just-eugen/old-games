@@ -1,12 +1,12 @@
 import { FC } from 'react';
-import { TGameProps } from './types';
-import { Container, StyledH2 } from './styled';
+import type { TGameProps } from './types';
+import { Container, StyledTitle } from './styled';
 
 export const Game: FC<TGameProps> = ({ name, description }) => {
   return (
     <Container>
-      <StyledH2>{name}</StyledH2>
-      {description}
+      <StyledTitle>{name}</StyledTitle>
+      {description ?? 'Нет описания'}
     </Container>
   );
 };
