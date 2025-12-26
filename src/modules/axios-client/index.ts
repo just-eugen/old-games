@@ -1,4 +1,4 @@
-import axios, { AxiosInstance } from 'axios';
+import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
 
 export class AxiosClient {
   private axiosInstance: AxiosInstance;
@@ -7,6 +7,10 @@ export class AxiosClient {
     this.axiosInstance = axios.create({
       baseURL,
     });
+  }
+
+  public request<T = unknown>(config: AxiosRequestConfig) {
+    return this.axiosInstance.request<T>(config);
   }
 
   public get = (url: string) => {

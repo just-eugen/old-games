@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { gameSlice } from "../game";
+import { gameApi } from "../game";
 
 export const store = configureStore({
   reducer: {
-    gameSlice: gameSlice.reducer,
+    [gameApi.reducerPath]: gameApi.reducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(gameApi.middleware),
 });

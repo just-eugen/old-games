@@ -1,6 +1,7 @@
-import { TGameList } from "../../routes/home/types";
-
-export type TGameState = {
-  gameList: TGameList;
-  isLoading: boolean;
+export type TGame = {
+  id: number;
+  name: string;
+  description?: string;
 };
+
+export type TGameList = TGame[];
