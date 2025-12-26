@@ -1,5 +1,5 @@
-import { Header } from './components/header';
-import { Home } from './routes/home';
+import { Header } from "./components/header";
+import { Home } from "./routes/home";
 
 function App() {
   return (
